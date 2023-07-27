@@ -2,7 +2,7 @@
 
 > 本项目是一个商用版服务平台，基于Java语言实现服务端功能，前端使用React框架，底层使用官方的ChatGPT API。用户可以通过一键部署方便地使用本平台。除了支持chat对话模型外，还支持openai官方所有api，包括余额查询、模型检索、Completions chatgpt对话、Images 图片模型、模型自定义训练、文件上传自定义模型、微调、文本审核和敏感词鉴别，以及GPT 3.5、4.0和4.0-32k等功能。
 
-## :raised_hands: 为何开源?
+## :raised_hands: 为何开源 ?
 1. 补缺java语言的商业版ChatGPT
 2. 加速创新,提高软件质量
 3. 共同学习
