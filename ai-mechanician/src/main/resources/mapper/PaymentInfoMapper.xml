@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.warape.aimechanician.mapper.PaymentInfoMapper">
+  <select id="trend" resultType="com.warape.aimechanician.domain.vo.TrendVO">
+    select DATE_FORMAT(create_time, '%Y-%m-%d') date, count(1) count
+    from payment_info
+      where create_time <![CDATA[>=]]> #{start}
+        and create_time <![CDATA[<=]]> #{end}
+    <if test="payState != null">
+      and pay_state = #{payState}
+    </if>
+    group by date
+  </select>
+
+  <select id="payAmountTrend" resultType="com.warape.aimechanician.domain.vo.TrendVO">
+    select DATE_FORMAT(create_time, '%Y-%m-%d') date, COALESCE(sum(pay_amount), 0) count
+    from payment_info
+    where create_time <![CDATA[>=]]> #{start}
+      and create_time <![CDATA[<=]]> #{end}
+      and pay_state = 1
+    group by date
+  </select>
+</mapper>

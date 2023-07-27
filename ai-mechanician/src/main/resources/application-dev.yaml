@@ -1,0 +1,154 @@
+# 你的域名 需修改
+appServer:
+  domain: 改成你的域名
+ai-manager-config:
+  name: admin
+  password: 123456
+
+# openai-key 需修改
+chatgpt:
+  apiKeys:
+    - 你的openai key(支持多个)
+    - 你的openai key(支持多个)
+  apiHost: http://chatpy.warape.top/  #国内镜像反代 可以不用修改
+
+# 微信公众号配置 需修改
+wx:
+  mp:
+    useRedis: true
+    appId:  # 第一个公众号的appid
+    secret:  # 公众号的appsecret
+    token:  # 接口配置里的Token值
+    aesKey:  # 接口配置里的EncodingAESKey值
+    redirectUri:
+
+# 拉新活动配置 无需修改
+activity:
+  invite-config:
+    url: ${appServer.domain}
+    # ase加密key
+    key: 8752ec4e15d7bb0c778b43967e992058
+
+# 阿里支付配置 需修改 如果接入 请将enable 设置为true
+ali-pay:
+  enable: false
+  conf:
+    appPublicKey:
+    appPrivateKey:
+    aliPublicKey:
+    appId:
+    serverUrl:
+    payCallbackUrl: ${appServer.domain}/api/ali/precreatePayCallback
+
+# 阿里短信模板配置 需修改
+ali-config:
+  sms:
+    accessKeySecret: 阿里accessKeySecret
+    accessKey: 阿里accessKey
+    signName: 签名名称
+    templateCode: 模板编码 ***
+
+# email配置 需修改
+email-config:
+  host: smtp.163.com
+  port: 465
+  auth: true
+  from: 需要修改  ***@163.com
+  user: 你的账号
+  pass: 你的密码
+
+server:
+  port: 8080
+  servlet:
+    encoding:
+      charset: utf-8
+      force: true
+      enabled: true
+# 文档设置 生产记得关闭
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html
+    tags-sorter: alpha
+    enabled: false
+    operations-sorter: alpha
+  api-docs:
+    path: /v3/api-docs
+  group-configs:
+    - group: 'default'
+      paths-to-match: '/**'
+      packages-to-scan: com.warape.aimechanician.controller
+# knife4j的增强配置，不需要增强可以不配
+knife4j:
+  enable: true
+  setting:
+    language: zh_cn
+
+spring:
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
+  # redis配置 需修改
+  redis:
+    # Redis数据库索引（默认为0）
+    database: 1
+    # Redis服务器地址
+    host: 127.0.0.1
+    # Redis服务器连接端口
+    port: 6379
+    # Redis服务器连接密码（默认为空）
+    #    password: 你的密码
+    # 连接超时时间
+    timeout: 10s
+  # 数据库配置 需修改
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/ai_mechanician?socketTimeout=4000&characterEncoding=UTF-8&zeroDateTimeBehavior=convertToNull&useSSL=false&serverTimezone=Asia/Shanghai
+    username: root
+    password: 你的密码
+    type: com.zaxxer.hikari.HikariDataSource
+    hikari:
+      minimum-idle: 10
+      maximum-pool-size: 50
+      auto-commit: true
+      idle-timeout: 300000
+      pool-name: AppHikariCP
+      max-lifetime: 540000
+      connection-timeout: 30000
+
+# mybatis-plus 无需修改
+mybatis-plus:
+  # 如果是放在src/main/java目录下 classpath:/com/yourpackage/*/mapper/*Mapper.xml
+  # 如果是放在resource目录 classpath:/mapper/*Mapper.xml
+  mapper-locations: classpath:/mapper/*Mapper.xml
+  #实体扫描，多个package用逗号或者分号分隔
+  typeAliasesPackage: com.warape.aimechanician.domain.*.entity
+  global-config:
+    db-config:
+      id-type: AUTO
+      logic-delete-value: 0
+      logic-not-delete-value: 1
+      #自定义填充策略接口实现
+  configuration:
+    #配置返回数据库(column下划线命名&&返回java实体是驼峰命名)，自动匹配无需as（没开启这个，SQL需要写as： select user_id as userId）
+    map-underscore-to-camel-case: true
+    cache-enabled: false
+#    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
+# sa-token 无需修改
+sa-token:
+  # token名称 (同时也是cookie名称)
+  token-name: satoken
+  # token有效期，单位s 默认30天, -1代表永不过期
+  timeout: 86400
+  # token临时有效期 (指定时间内无操作就视为token过期) 单位: 秒
+  activity-timeout: -1
+  # 是否允许同一账号并发登录 (为true时允许一起登录, 为false时新登录挤掉旧登录)
+  is-concurrent: true
+  # 在多人登录同一账号时，是否共用一个token (为true时所有登录共用一个token, 为false时每次登录新建一个token)
+  is-share: true
+  # token风格
+  token-style: uuid
+  # 是否输出操作日志
+  is-log: true
+  token-prefix: Bearer
+

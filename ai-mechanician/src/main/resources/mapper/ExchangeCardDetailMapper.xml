@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.warape.aimechanician.mapper.ExchangeCardDetailMapper">
+
+  <update id="consume">
+    update exchange_card_detail
+    set surplus_count=surplus_count - #{consumeCount}
+    where user_id = #{userId}
+      and exchange_state = 1
+      and yn = 1 order by id desc limit 1;
+  </update>
+
+  <select id="sumSurplusCount" resultType="int">
+    select COALESCE(sum(surplus_count),0) from exchange_card_detail  where user_id = #{userId} and exchange_state = 1 and yn=1
+  </select>
+
+</mapper>

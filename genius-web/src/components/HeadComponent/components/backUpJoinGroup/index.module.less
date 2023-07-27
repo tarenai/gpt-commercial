@@ -1,0 +1,72 @@
+.custom_dialog {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 99;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+
+  :global {
+    .custom_dialog-warp {
+      width: 600px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: rgb(44, 44, 50);
+      padding: 20px;
+      color: #fff;
+      border-radius: 10px;
+      .custom_dialog-head {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .title {
+          font-size: 18px;
+          font-weight: bold;
+          text-align: left;
+        }
+        .closeBtn {
+          cursor: pointer;
+        }
+      }
+      .custom_dialog-content {
+        width: 100%;
+        margin-top: 20px;
+        text-align: center;
+        .ant-tabs-tab {
+          color: #fff;
+        }
+        .ant-tabs-tab-active {
+          color: #40a9ff;
+        }
+        .free_question-info {
+          width: 100%;
+          text-align: center;
+          font-size: 16px;
+        }
+        .user_detail_bottom {
+          width: 100%;
+          margin-top: 20px;
+          display: flex;
+          justify-content: flex-end;
+        }
+        .groupImg {
+          width: 45%;
+          display: block;
+          margin: 0 auto;
+        }
+
+        .jonUstitle{
+          color: #fff;
+          font-size: 14px;
+        }
+      }
+
+      @media only screen and (max-width: 600px) {
+        width: 80%;
+      }
+    }
+  }
+}

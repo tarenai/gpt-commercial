@@ -1,0 +1,15 @@
+.newtons-cradle {
+  width: 1px;
+  height: 15px;
+  background: #666;
+  animation: twinkleAnimate 0.8s linear infinite;
+}
+
+@keyframes twinkleAnimate {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}

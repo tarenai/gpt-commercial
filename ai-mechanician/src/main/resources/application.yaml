@@ -1,0 +1,6 @@
+spring:
+  application:
+    name: ai-mechanician
+  profiles:
+    active: ${profile:dev}
+

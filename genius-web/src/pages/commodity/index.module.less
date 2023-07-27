@@ -1,0 +1,102 @@
+.commodity {
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background: #fff;
+  border-radius: 5px;
+  padding: 10px;
+  box-sizing: border-box;
+
+  :global {
+    .commodity_tools {
+      width: 100%;
+    }
+    .title {
+      width: 100%;
+      font-size: 30px;
+      text-align: center;
+      font-weight: bold;
+    }
+    .logo {
+      width: 10%;
+      display: flex;
+      margin: 0 auto;
+      @media only screen and (max-width: 600px) {
+        width: 25%;
+      }
+    }
+    .commodity_content {
+      width: 80%;
+      margin: 0 auto;
+      margin-top: 30px;
+      padding: 20px;
+      box-sizing: border-box;
+      @media only screen and (max-width: 600px) {
+        display: none;
+      }
+      .commodity_content_card {
+        width: 100%;
+        text-align: center;
+        padding-top: 20px;
+        position: relative;
+        z-index: 1;
+        .count {
+          width: 100%;
+          font-size: 30px;
+          font-weight: bold;
+          margin-top: 20px;
+        }
+        .date {
+          font-size: 20px;
+        }
+
+        .price {
+          font-size: 26px;
+        }
+      }
+    }
+
+    .mobile_commodity_content {
+      width: 100%;
+      margin: 0 auto;
+      box-sizing: border-box;
+      display: none;
+      margin-top: 20px;
+      @media only screen and (max-width: 600px) {
+        display: block;
+        .commodity_content_animate_card {
+          margin-bottom: 20px;
+        }
+        .commodity_content_card {
+          width: 100%;
+          text-align: center;
+          position: relative;
+          z-index: 1;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          padding: 5px 0;
+          .count {
+            width: 100%;
+            font-size: 30px;
+            font-weight: bold;
+            margin-bottom: 0;
+            margin-top: 0;
+          }
+          .date {
+            font-size: 20px;
+            margin-bottom: 0;
+            margin-top: 0;
+          }
+
+          .price {
+            font-size: 26px;
+            margin-bottom: 0;
+            margin-top: 0;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.warape.aimechanician.mapper.AccountMapper">
+  <update id="commonUpdateAmount">
+    update account
+    set account_balance=account_balance + #{changeAmount},
+        update_by      = #{operatorName}
+    where id = #{id}
+  </update>
+</mapper>

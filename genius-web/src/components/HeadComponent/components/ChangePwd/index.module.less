@@ -1,0 +1,109 @@
+.custom_dialog {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 99;
+  width: 100%;
+  height: 100%;
+
+  :global {
+    .custom_dialog-warp {
+      width: 350px;
+      height: auto;
+  
+      margin: 0 auto;
+      margin-top: 20vh;
+      background: rgb(44, 44, 50);
+      padding: 20px;
+      color: #fff;
+      border-radius: 10px;
+      .custom_dialog-head {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .title {
+          font-size: 18px;
+          font-weight: bold;
+          text-align: left;
+        }
+        .closeBtn {
+          cursor: pointer;
+        }
+      }
+      .custom_dialog-content {
+        width: 100%;
+        margin-top: 20px;
+        max-height: 60vh;
+        overflow: auto;
+
+        .content-item,
+        .verification_code-item {
+          margin-bottom: 20px;
+        }
+
+        .verification_code-item {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          .code-item {
+            border: 1px solid #aaa;
+            width: 120px;
+            height: 32px;
+            display: flex;
+            align-items: center;
+            background: #fff;
+            border-radius: 3px;
+            color: #000;
+            margin-left: 10px;
+            justify-content: center;
+            cursor: pointer;
+          }
+        }
+
+        .vcerification_code-info {
+          padding: 0;
+          line-height: 1.5;
+          color: #fff;
+          border: none;
+          background: transparent;
+          margin-top: 5px;
+          cursor: pointer;
+
+          &:hover {
+            color: #2254f4;
+          }
+        }
+
+        .user_detail_bottom {
+          width: 100%;
+          margin-top: 20px;
+          display: flex;
+          justify-content: center;
+
+          .submitBtnText {
+            width: 60%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 3px 10px;
+            color: white;
+            text-shadow: 2px 2px rgb(116, 116, 116);
+            text-transform: uppercase;
+            border: solid 2px black;
+            letter-spacing: 1px;
+            font-weight: 600;
+            font-size: 17px;
+            background-color: hsl(49deg 98% 60%);
+            border-radius: 50px;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.5s ease;
+            margin: 0 auto;
+            cursor: pointer;
+            z-index: 99;
+          }
+        }
+      }
+    }
+  }
+}

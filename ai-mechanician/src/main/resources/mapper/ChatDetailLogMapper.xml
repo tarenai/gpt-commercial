@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.warape.aimechanician.mapper.ChatDetailLogMapper">
+  <select id="selectLastQuestion" resultType="com.warape.aimechanician.domain.vo.SessionRecordVo">
+    select a.request_id                                                           reqId,
+           a.chat_role                                                            chatRole,
+      left(a.content, 20)                                                    content,
+      a.create_time                                                          createTime,
+      (select count(1) from chat_detail_log where request_id = a.request_id) reqCount
+    from chat_detail_log a
+    where a.id in (select min(id)
+      from chat_detail_log
+      where user_id = #{userId}
+      and chat_role = #{chatRole}
+      group by request_id)
+      and a.yn = 1;
+
+  </select>
+
+  <select id="trend" resultType="com.warape.aimechanician.domain.vo.TrendVO">
+    select DATE_FORMAT(create_time, '%Y-%m-%d') date, count(1) count
+    from chat_detail_log
+    where create_time <![CDATA[>=]]> #{start}
+    and create_time <![CDATA[<=]]> #{end}
+    group by date
+  </select>
+</mapper>

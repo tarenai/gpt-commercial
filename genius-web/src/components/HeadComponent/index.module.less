@@ -1,0 +1,140 @@
+.header {
+  padding: 0 20px !important;
+  display: flex;
+  justify-content: space-between;
+  @media only screen and (max-width: 600px) {
+    padding: 0 !important;
+  }
+  :global {
+    .logoBox {
+      width: auto;
+      height: 100%;
+      display: flex;
+      justify-content: space-between;
+
+      .logo {
+        width: 50px;
+        height: 64px;
+      }
+      .title {
+        flex: 1;
+        height: 64px;
+        font-size: 20px;
+        color: #fff;
+        text-align: center;
+        margin-left: 5px;
+        @media only screen and (max-width: 600px) {
+          font-size: 12px;
+        }
+      }
+    }
+
+    .userInfo {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 64px;
+      .bug_vip,
+      .freeQuestion,
+      .propose,
+      .inviteUser {
+        color: #63e2b7;
+        margin-right: 3px;
+        padding: 5px;
+        cursor: pointer;
+      }
+
+      @media only screen and (max-width: 600px) {
+        display: none;
+      }
+
+      .propose {
+        color: #f2ca69 !important;
+      }
+
+      .inviteUser {
+        color: #2aaee6;
+      }
+
+      .freeQuestion {
+        color: #f5dbc9;
+      }
+      .user_info-box {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-left: 20px;
+        @media only screen and (max-width: 600px) {
+          margin-right: 5px;
+        }
+        .user_avatar {
+          border-radius: 15px;
+          width: 30px;
+          object-fit: cover;
+        }
+        .userName {
+          color: #fff;
+          text-align: center;
+          font-size: 14px;
+          margin-left: 10px;
+          cursor: pointer;
+        }
+      }
+    }
+
+    .mobile_userInfo {
+      display: none;
+      @media only screen and (max-width: 600px) {
+        display: block;
+      }
+      .mobile_userInfo-warp {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 64px;
+        .bug_vip,
+        .freeQuestion,
+        .propose,
+        .inviteUser {
+          color: #63e2b7;
+          margin-right: 10px;
+          padding: 5px;
+          cursor: pointer;
+        }
+
+        .propose {
+          color: #f2ca69;
+        }
+
+        .inviteUser {
+          color: #2aaee6;
+        }
+
+        .freeQuestion {
+          color: #f5dbc9;
+        }
+        .user_info-box {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          margin-left: 10px;
+          @media only screen and (max-width: 600px) {
+            margin-right: 5px;
+          }
+          .user_avatar {
+            border-radius: 15px;
+            width: 30px;
+            object-fit: cover;
+          }
+          .userName {
+            color: #fff;
+            text-align: center;
+            font-size: 14px;
+            margin-left: 10px;
+            cursor: pointer;
+          }
+        }
+      }
+    }
+  }
+}

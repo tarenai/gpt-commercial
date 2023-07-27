@@ -1,0 +1,97 @@
+.invite_giftUrl_info {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 99;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+
+  :global {
+    .user_detail-warp {
+      width: 600px;
+      height: auto;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: rgb(44, 44, 50);
+      padding: 20px;
+      color: #fff;
+      border-radius: 10px;
+      @media only screen and (max-width: 600px) {
+        width: 80%;
+      }
+      .user_detail-head {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .title {
+          font-size: 18px;
+          font-weight: bold;
+          text-align: left;
+        }
+        .closeBtn {
+          cursor: pointer;
+        }
+      }
+      .user_detail-content {
+        width: 100%;
+        margin-top: 20px;
+        padding-bottom: 20px;
+        .title,
+        .invite_url_title {
+          text-align: center;
+          font-size: 24px;
+        }
+
+        .invite_url_title {
+          margin-top: 20px;
+        }
+        .content {
+          width: 100%;
+          padding: 0 20px;
+          text-indent: 20px;
+        }
+        .detail_info {
+          width: 100%;
+          text-align: center;
+          margin-top: 10px;
+        }
+
+        .invite_url_warp {
+          width: 100%;
+          padding: 0 20px;
+          box-sizing: border-box;
+          display: flex;
+          justify-content: center;
+
+          .ant-input-group-compact {
+            text-align: center;
+          }
+          @media only screen and (max-width: 600px) {
+            display: none;
+          }
+        }
+        .mobile_invite_url_warp {
+          width: 100%;
+          padding: 0 20px;
+          box-sizing: border-box;
+          display: flex;
+          justify-content: center;
+          text-align: center;
+          display: none;
+          @media only screen and (max-width: 600px) {
+            display: block;
+          }
+          .ant-input-group-compact {
+            text-align: center;
+          }
+          .copybtn {
+            margin-top: 20px;
+          }
+        }
+      }
+    }
+  }
+}

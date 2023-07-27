@@ -1,0 +1,246 @@
+.loginWarp {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+  background: radial-gradient(
+      circle at 60% 90%,
+      rgba(46, 103, 161, 1),
+      transparent 60%
+    ),
+    radial-gradient(
+      circle at 20px 20px,
+      rgba(72, 120, 168, 0.8),
+      transparent 25%
+    ),
+    #182336;
+
+  :global {
+    .login-content {
+      width: 100%;
+      height: 100%;
+      transition: transform 0.8s;
+      position: absolute;
+      top: 0;
+      z-index: 1;
+    }
+    .login_bottom-info {
+      position: absolute;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      a {
+        color: #fff;
+      }
+    }
+
+    .userAgreementInfoBox {
+      display: flex;
+      justify-content: center;
+      margin-top: 30px;
+      display: flex;
+
+      .info_item {
+        color: #fff;
+        font-size: 12px;
+        margin: 0 4px;
+        border-bottom: 1px solid #fff;
+        cursor: pointer;
+        &:hover {
+          color: hsl(49, 98%, 60%);
+          border-bottom: 1px solid hsl(49, 98%, 60%);
+        }
+      }
+    }
+    .loginBox,
+    .typeLoginBox {
+      width: 300px;
+      min-height: 338px;
+      border-radius: 20px;
+      padding-bottom: 20px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      margin-left: -150px;
+      margin-top: -175px;
+      text-align: center;
+      color: rgba(255, 255, 255, 0.8);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+      border-left: 1px solid rgba(255, 255, 255, 0.4);
+      background: linear-gradient(
+        to top right,
+        rgba(90, 149, 207, 0.5),
+        rgba(58, 76, 99, 0.8)
+      );
+
+      background: -webkit-linear-gradient(
+        to top right,
+        rgba(90, 149, 207, 0.5),
+        rgba(58, 76, 99, 0.8)
+      ); /* Chrome10+,Safari5.1+ */
+      background: -o-linear-gradient(
+        to top right,
+        rgba(90, 149, 207, 0.5),
+        rgba(58, 76, 99, 0.8)
+      ); /* Opera 11.10+ */
+      background: -ms-linear-gradient(
+        to top right,
+        rgba(90, 149, 207, 0.5),
+        rgba(58, 76, 99, 0.8)
+      ); /* IE10+ */
+      background: linear-gradient(
+        to top right,
+        rgba(90, 149, 207, 0.5),
+        rgba(58, 76, 99, 0.8)
+      ); /* W3C */
+      box-shadow: 10px -10px 20px rgba(0, 0, 0, 0.2),
+        -10px 10px 20px rgba(255, 255, 255, 0.1);
+
+      transition: all 0.5s ease-in-out;
+
+      .logo {
+        display: block;
+        margin: 0 auto;
+        width: 60%;
+        height: 150px;
+        margin-top: 10px;
+      }
+      .title {
+        width: 100%;
+        text-align: center;
+        color: #fff;
+        font-size: 20px;
+        margin-top: 20px;
+        font-weight: bold;
+      }
+
+      .backUp {
+        position: absolute;
+        top: 15px;
+        left: 15px;
+        cursor: pointer;
+      }
+    }
+
+    .loginBox {
+      .login_method-box {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+      }
+    }
+    .typeLoginBox {
+      #qrCode {
+        margin-top: 30px;
+      }
+
+      .submitBtnText {
+        width: 60%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0 10px;
+        color: white;
+        text-shadow: 2px 2px rgb(116, 116, 116);
+        text-transform: uppercase;
+        border: solid 2px black;
+        letter-spacing: 1px;
+        font-weight: 600;
+        font-size: 17px;
+        background-color: hsl(49deg 98% 60%);
+        border-radius: 50px;
+        position: relative;
+        overflow: hidden;
+
+        margin: 0 auto;
+        cursor: pointer;
+        z-index: 99;
+      }
+
+      .testContent {
+        height: 250px;
+        text-align: left;
+        padding: 20px;
+        box-sizing: border-box;
+        text-indent: 20px;
+        color: #fff;
+      }
+
+      .phoneLogin {
+        width: 100%;
+        height: auto;
+        padding: 40px;
+        box-sizing: border-box;
+
+        .phone_login-warp {
+          width: 100%;
+
+          .title {
+            width: 100%;
+            text-align: center;
+            margin-top: 0;
+            margin-bottom: 30px;
+            color: hsl(49, 98%, 60%);
+          }
+          .content-box {
+            width: 100%;
+            .submitBtnText {
+              width: 100%;
+              margin-top: 25px;
+            }
+            .tools_btns {
+              width: 100%;
+              display: flex;
+              justify-content: space-between;
+              margin-top: 20px;
+              .btns-item {
+                text-decoration: dashed;
+                cursor: pointer;
+                border-bottom: 1px solid #fff;
+                &:hover {
+                  color: #fdd835;
+                }
+              }
+            }
+          }
+        }
+
+        .verification_code-box {
+          width: 100%;
+          display: flex;
+          justify-content: space-between;
+          margin-top: 20px;
+          .get_verification,
+          .verification_code {
+            flex: 1;
+            height: auto;
+            background: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-left: 5px;
+            border-radius: 5px;
+            color: dimgray;
+            cursor: pointer;
+          }
+        }
+      }
+
+      .wxLoginBox {
+        .title {
+          width: 100%;
+          text-align: center;
+          margin-bottom: 0px;
+          color: hsl(49, 98%, 60%);
+        }
+
+        .refreshWxCode {
+          color: red;
+          font-weight: bold;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}

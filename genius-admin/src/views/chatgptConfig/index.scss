@@ -1,0 +1,31 @@
+.chatgpt_config-warp {
+  width: 100%;
+  height: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+  .config-box {
+    width: 50%;
+    margin: 0 auto;
+    padding-top: 50px;
+    .apiKeyList{
+      width: 100%;
+      border: 1px solid #eee;
+      padding: 10px;
+      .apiKey-item{
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 10px;
+
+      }
+      .addKey{
+        display: block;
+        margin: 0 auto;
+        margin-top: 10px;
+      }
+    }
+    .info {
+      margin-top: 20px;
+      text-align: center;
+    }
+  }
+}

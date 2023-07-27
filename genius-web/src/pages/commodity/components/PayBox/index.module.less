@@ -1,0 +1,77 @@
+.custom_dialog {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 99;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+
+  :global {
+    .custom_dialog-warp {
+      width: 600px;
+      height: auto;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: rgb(44, 44, 50);
+      padding: 20px;
+      color: #fff;
+      border-radius: 10px;
+      @media only screen and (max-width: 600px) {
+        width: 80%;
+      }
+      .custom_dialog-head {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .title {
+          font-size: 18px;
+          font-weight: bold;
+          text-align: left;
+        }
+        .closeBtn {
+          cursor: pointer;
+        }
+      }
+      .custom_dialog-content {
+        width: 100%;
+        margin-top: 20px;
+        .product_info {
+          width: 100%;
+          text-align: center;
+          font-size: 18px;
+
+          .active {
+            color: #edab38;
+          }
+        }
+
+        .pay_method {
+          width: 100%;
+          display: flex;
+          justify-content: center;
+        }
+
+        .qrCode_box {
+          text-align: center;
+          margin-top: 20px;
+          .pay_title{
+            font-size: 20px;
+          }
+        }
+        .user_detail_bottom {
+          width: 100%;
+          display: flex;
+          justify-content: center;
+          margin-top: 20px;
+          .tolls_btn {
+            margin: 0 10px;
+            cursor: pointer;
+          }
+        }
+      }
+    }
+  }
+}
