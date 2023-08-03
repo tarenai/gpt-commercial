@@ -25,7 +25,7 @@
 
 > 公众号交互
 
-<img src="https://github.com/apeto2/gpt-commercial/assets/131843341/73e87373-e707-4079-8a8e-8a3518450ef4?raw=true" alt="图片替换文本" width="200" height="450" align="bottom" />
+<img src="https://user-images.githubusercontent.com/131843341/243649229-73e87373-e707-4079-8a8e-8a3518450ef4.png" alt="图片替换文本" width="200" height="450" align="bottom" />
 
 
 > 旅游攻略
