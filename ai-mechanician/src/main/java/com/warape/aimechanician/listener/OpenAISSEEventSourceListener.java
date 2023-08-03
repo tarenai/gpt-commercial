@@ -1,9 +1,5 @@
 package com.warape.aimechanician.listener;
 
-import java.util.List;
-import java.util.Objects;
-import java.util.function.Consumer;
-
 import cn.hutool.core.collection.CollectionUtil;
 import cn.hutool.core.util.StrUtil;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -20,6 +16,10 @@ import okhttp3.ResponseBody;
 import okhttp3.sse.EventSource;
 import okhttp3.sse.EventSourceListener;
 import org.springframework.web.servlet.mvc.method.annotation.SseEmitter;
+
+import java.util.List;
+import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * 描述：OpenAIEventSourceListener
@@ -88,8 +88,12 @@ public class OpenAISSEEventSourceListener extends EventSourceListener {
         return;
       }
       String content = delta.getContent();
-      if (StrUtil.isBlank(content)) {
+      if(content == null){
         return;
+      }
+      if ("".equals(content)) {
+        delta.setContent("\n");
+        content = "\n";
       }
       delta.setRole(Role.ASSISTANT.getName());
       lastMessage += content;

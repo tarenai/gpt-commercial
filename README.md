@@ -2,7 +2,7 @@
 
 > 本项目是一个商用版服务平台，基于Java语言实现服务端功能，前端使用React框架，底层使用官方的ChatGPT API。用户可以通过一键部署方便地使用本平台。除了支持chat对话模型外，还支持openai官方所有api，包括余额查询、模型检索、Completions chatgpt对话、Images 图片模型、模型自定义训练、文件上传自定义模型、微调、文本审核和敏感词鉴别，以及GPT 3.5、4.0和4.0-32k等功能。
 
-## :raised_hands: 为何开源 ?
+## :raised_hands: 为何开源?
 1. 补缺java语言的商业版ChatGPT
 2. 加速创新,提高软件质量
 3. 共同学习
@@ -17,6 +17,7 @@
 6. AI角色赋能
 7. 会员卡功能
 8. 反馈与建议
+9. 后台管理仪表盘/用户信息/gpt配置/会员卡及权益配置/站点logo配置/网站名称配置....省略~
 
 
 
@@ -57,7 +58,7 @@
 
 ## 模块说明
 
-|   C 端源码    |  服务端     | 后台管理页面 |
+|   C 端页面源码    |  服务端     | B端后台管理页面源码 |
 | :---        |    :----:   |:------:| 
 |    [genius-web](genius-web)   |  [ai-mechanician](ai-mechanician)   |   [genius-admin](genius-admin)     |
 
@@ -65,9 +66,9 @@
 ## 部署教程
 
 ### 1.环境安装(新手建议宝塔安装)
-1. mysql
-2. redis
-3. Nginx
+1. mysql >=5.7
+2. redis >=6
+3. Nginx >=2.0
 
 ### 2.初始化SQL
 将ai-mechanician/sql/ai-mechanician.sql导入到mysql中
@@ -90,7 +91,7 @@ services:
   gpt-commercial:
     container_name: gpt-commercial
     network_mode: "host"
-    image: registry.cn-hangzhou.aliyuncs.com/warape/gpt-commercial:v1.0.2
+    image: registry.cn-hangzhou.aliyuncs.com/warape/gpt-commercial:v1.3.1
     volumes:
       - /www/wwwroot/docker/gpt-commercial/config:/home/spring/config  #config映射目录
       - /www/wwwroot/docker/gpt-commercial/logs:/home/spring/logs     #logs映射目录
@@ -128,13 +129,18 @@ docker-compose -f docker-compose.yaml logs
 ## :100: 以下为plus收费版
 
 > 如果以上开源代码不满足你的要求,可以看一下我们的收费版本 一次购买 持续更新 随着功能的完善后面会涨价哦~ 现在还是优惠阶段
+> 现在卖源码的泛滥，有些直接发你源码。不管你是否有部署能力，也没有售后和运营帮助。更没有持续更新。但我们不一样~~~
+
+1. 私有化部署AI并且永久免费持续更新
+
+2. VIP会员群，答疑解惑，分享成功案例
+
+3. 知识库(预计8月中旬上线)
 
 ## :link: 演示地址 https://chat.apeto.cn
 
+## :link: 后台管理演示地址:  http://chatadmin1.warape.top/
+账号: admin  密码: 123456
+
 ## :link: 说明文档 https://be.apeto.cn/archives/shang-ye-ban-chatgpt
 > 项目快到飞起~可自行体验
-
-## 后台管理系统说明文档
-
-:link: https://be.apeto.cn/archives/genius-ai-hou-tai-guan-li-xi-tong-shi-yong-shuo-ming
-

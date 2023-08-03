@@ -10,7 +10,7 @@ chatgpt:
   apiKeys:
     - 你的openai key(支持多个)
     - 你的openai key(支持多个)
-  apiHost: https://chatpy.warape.top/  #国内镜像反代 可以不用修改
+  apiHost:
 
 # 微信公众号配置 需修改
 wx:
