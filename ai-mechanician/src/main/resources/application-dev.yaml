@@ -7,9 +7,9 @@ ai-manager-config:
 
 # openai-key 需修改
 chatgpt:
+  # 你的openai key(支持多个)
   apiKeys:
-    - 你的openai key(支持多个)
-    - 你的openai key(支持多个)
+    - ${API_KEY}
   apiHost:
 
 # 微信公众号配置 需修改
@@ -55,7 +55,7 @@ email-config:
   auth: true
   from: 需要修改  ***@163.com
   user: 你的账号
-  pass: 你的密码
+  pass: 授权密码
 
 server:
   port: 8080
@@ -104,7 +104,7 @@ spring:
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://127.0.0.1:3306/ai_mechanician?socketTimeout=4000&characterEncoding=UTF-8&zeroDateTimeBehavior=convertToNull&useSSL=false&serverTimezone=Asia/Shanghai
     username: root
-    password: 你的密码
+    password: 123456
     type: com.zaxxer.hikari.HikariDataSource
     hikari:
       minimum-idle: 10
